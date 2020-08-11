@@ -33,6 +33,7 @@ class App extends React.Component {
 							...snapShot.data()
 						}
 					});
+					//REMOVE
 					console.log(this.state)
 				});
 			} else {
