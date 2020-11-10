@@ -11,7 +11,6 @@ import MenuItem from '../menu-item/menu-item.component';
 import './directory.styles.scss';
 
 const Directory = ({ sections }) => {
-	console.log(sections);
 	return(
 		<div className="directory-menu">
 			{
