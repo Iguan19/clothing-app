@@ -8,17 +8,17 @@ import { selectDirectorySections } from '../../redux/directory/directory.selecto
 
 import MenuItem from '../menu-item/menu-item.component';
 
-import './directory.styles.scss';
+import * as S from './directory.styles';
 
 const Directory = ({ sections }) => {
 	return(
-		<div className="directory-menu">
+		<S.DirectoryMenu>
 			{
 				sections.map(({id, ...otherSectionProps}) => {
 					return <MenuItem key={id} {...otherSectionProps} />
 				})
 			}
-		</div>
+		</S.DirectoryMenu>
 	);
 }
 
