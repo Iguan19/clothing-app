@@ -10,39 +10,33 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 
-import { 
-	HeaderContainer, 
-	LogoContainer,
-	OptionsContainer,
-	OptionLink,
-	OptionDiv 
-} from './header.styles';
+import * as S from './header.styles';
 
 
 const Header = ({ currentUser, hidden }) => {
 	return(
-		<HeaderContainer>
-			<LogoContainer to='/'>
+		<S.HeaderContainer>
+			<S.LogoContainer to='/'>
 				<Logo />
-			</LogoContainer>
-			<OptionsContainer>
-				<OptionLink to='/shop'>
+			</S.LogoContainer>
+			<S.OptionsContainer>
+				<S.OptionLink to='/shop'>
 					SHOP
-				</OptionLink>
-				<OptionLink to='/shop'>
+				</S.OptionLink>
+				<S.OptionLink to='/shop'>
 					CONTACT
-				</OptionLink>
+				</S.OptionLink>
 				{
 					currentUser ? (
-					<OptionDiv onClick={() => auth.signOut()} >SIGN OUT</OptionDiv>
+					<S.OptionDiv onClick={() => auth.signOut()} >SIGN OUT</S.OptionDiv>
 					) : (
-					<OptionLink to='signin' >SIGN IN</OptionLink>
+					<S.OptionLink to='signin' >SIGN IN</S.OptionLink>
 					)
 				}
 				<CartIcon />
-			</OptionsContainer>
+			</S.OptionsContainer>
 			{hidden ? null : <CartDropdown />}
-		</HeaderContainer>
+		</S.HeaderContainer>
 	);
 }
 
